@@ -12,14 +12,14 @@
 // should return −1, since there is no substring that satisfies the restrictions on the format of a valid
 // password.
 // Assume that:
-// N is an integer within the range [1..200]; 
+// N is an integer within the range [1..200];
 // string S consists only of
 // alphanumerical characters (a−z and/or
 // A−Z and/or 0−9).
 // In your solution, focus on correctness. The performance of your solution will not be the focus of
 // the assessment.
 
-
+// WRONG!!!
 
 function solution(s){
   // var arrNewString=[];
@@ -28,26 +28,21 @@ function solution(s){
   var longestSubstring = 0;
   if (/[A-Z]/.test(s) == false) return (-1);
   for (var i = 0; i < s.length; i++) {
-          console.log("i : " + i);
-
+    console.log("i : " + i);
     if (isNaN(s[i]) &&  (/[A-Z]/.test(s[i]) || /[a-z]/.test(s[i]))) {
       newString += s[i];
-        // console.log(typeof newString.length);
+      // console.log(typeof newString.length);
       console.log("string if : " + newString);
-
+      if ( longestSubstring < newString.length) longestSubstring = newString.length;
     } else {
-                    console.log("string else : " + newString);
-
+      console.log("string else : " + newString);
       // if (/[A-Z]/.test(newString)== false) {
-
-          if ( longestSubstring < newString.length) {
-                    longestSubstring = newString.length;
-                    console.log("longest : " + longestSubstring);
-                    console.log("string : " + newString);
-                    newString="";
-
-
-          }
+      // if ( longestSubstring < newString.length) {
+        // longestSubstring = newString.length;
+        console.log("longest : " + longestSubstring);
+        console.log("string : " + newString);
+        newString="";
+      // }
 
 
       // }
@@ -64,6 +59,6 @@ function solution(s){
 
 
 
-var string = "a0Ba";
+var string = "awasdfa2s0Ba";
 b = solution(string);
 // console.log(b);
